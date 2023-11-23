@@ -79,15 +79,18 @@
 
 
 <div class="container"> 
-    <h1 class="display-6 text-center fw-bold"> SERVICES OFFER</h1>
+    <h1 class="display-6 text-center fw-bold"> SERVICES OFFER   </h1>
     <div class="row">
       <div class="owl-carousel owl-theme">
         <div class="card">
-            <div class="card-body">  
+            <div class="card-body"> 
             <img src="https://scontent.fmnl30-1.fna.fbcdn.net/v/t39.30808-6/362609706_808129997682932_5176945775267993145_n.jpg?_nc_cat=102&ccb=1-7&_nc_sid=5f2048&_nc_eui2=AeF42H_Ykzw2FTYAZvwe1qdOzCtlbE9b4L3MK2VsT1vgvSrb__TxiA6p7QhwcjUfCokqpucR1lLUYJfE8LlYJn5K&_nc_ohc=6oFbaYOsfNYAX8cSoH0&_nc_ht=scontent.fmnl30-1.fna&oh=00_AfATjYXSlmmxB4ckN3ljRaS2a1lGh8ljO0iOnV7ngYDC3g&oe=6560C3CE" 
                 alt="Products" class="card-img-top" height="300px" >
                 <hr/>   
-                <h1 class="text-center"> LIGHTED PANAFLEX</h1>
+                <div class="text-start" style="display: inline-block; width: 98%; ">
+                  <h2 class="text-start">LIGHTED PANAFLEX</h2>
+                  <input type="checkbox" id="card1" class="form-check-input" style="float:right; margin-top:-38px; top: 30px; right: 10px; height: 20px;">
+                </div>
             </div>
       </div>    
       <div class="card">
@@ -95,7 +98,10 @@
             <img src="https://scontent.fmnl30-1.fna.fbcdn.net/v/t39.30808-6/363315804_809070957588836_1400153340437355186_n.jpg?_nc_cat=103&ccb=1-7&_nc_sid=5f2048&_nc_eui2=AeGcEhp1KhTYJGb81b27_FI8mdbez-2V4amZ1t7P7ZXhqfEOAhBx7SYlazoVEOEj48Cu0HG-TP3G7tw0F_IVL_Sc&_nc_ohc=ujfZ2EsiljEAX8KON3m&_nc_ht=scontent.fmnl30-1.fna&oh=00_AfAo07EbRxnG6OGNjPFt2PhrPFg58TGSENsPfwQVtJjS5Q&oe=655F5DF8" 
                 alt="Products" class="card-img-top" height="300px" >
                 <hr/>   
-                <h1 class="text-center"> ROUND ACRYLIC SIGN</h1>
+                <div class="text-start" style="display: inline-block; width: 98%; ">
+                  <h2 class="text-start">ROUND ACRYLIC SIGN</h2>
+                  <input type="checkbox" id="card1" class="form-check-input" style="float:right; margin-top:-38px; top: 30px; right: 10px; height: 20px;">
+                </div>  
             </div>
       </div>    
       <div class="card">
@@ -103,7 +109,10 @@
             <img src="https://scontent.fmnl30-3.fna.fbcdn.net/v/t39.30808-6/365747887_814462570383008_5494749635775008382_n.jpg?_nc_cat=111&ccb=1-7&_nc_sid=5f2048&_nc_eui2=AeGfKYa5siaE8GGLTlEUTE6gDb2b_BA0Ca0NvZv8EDQJrcZZ3R79VnAX_01iMYdu7BLTVnhGqXfCLgyUsHgflA4n&_nc_ohc=03wj41I4HDEAX8FK2Lh&_nc_ht=scontent.fmnl30-3.fna&oh=00_AfBtrVENkz6JgQku13eBKl0lLwZ8W7-1Xi_F9qbLbuUujQ&oe=65614360" 
                 alt="Products" class="card-img-top" height="300px" >
                 <hr/>   
-                <h1 class="text-center"> BUILD UP ACRYLIC SIGN</h1>
+                <div class="text-start" style="display: inline-block; width: 98%; ">
+                  <h3 class="text-start">BUILD UP ACRYLIC SIGN</h3>
+                  <input type="checkbox" id="card1" class="form-check-input" style="float:right; margin-top:-38px; top: 30px; right: 10px; height: 20px;">
+                </div>
             </div>
       </div>    
       <div class="card">
@@ -111,7 +120,10 @@
             <img src="https://scontent.fcrk1-4.fna.fbcdn.net/v/t39.30808-6/341628203_497699535781160_6614230142089568434_n.jpg?_nc_cat=111&ccb=1-7&_nc_sid=5f2048&_nc_eui2=AeHo1ZoA1logqQoUmVCompHnkSsskmeBPPuRKyySZ4E8-_MzumjbpqVL-BGK4MRiyQB72kIJM0tUYkTX130PEtg-&_nc_ohc=Qzdibu0AdacAX-43uzO&_nc_ht=scontent.fcrk1-4.fna&oh=00_AfA6ETiHQyiB0fnCbu83Y5xDvi21Dzrp3ol_-AUqCIa6BQ&oe=655FCA3E" 
                 alt="Products" class="card-img-top" height="300px" >
                 <hr/>   
-                <h1 class="text-center"> Products</h1>
+                <div class="text-start" style="display: inline-block; width: 98%; ">
+                  <h2 class="text-center">PRODUCTS</h2>
+                  <input type="checkbox" id="card1" class="form-check-input" style="float:right; margin-top:-38px; top: 30px; right: 10px; height: 20px;">
+                </div>
             </div>
       </div>    
       <div class="card">
@@ -119,7 +131,10 @@
             <img src="https://static.thenounproject.com/png/396915-200.png" 
                 alt="Products" class="card-img-top" height="300px" >
                 <hr/>   
-                <h1 class="text-center"> Test Project</h1>
+                <div class="text-start" style="display: inline-block; width: 98%; ">
+                  <h2 class="text-center">TEST PROJECT</h2>
+                  <input type="checkbox" id="card1" class="form-check-input" style="float:right; margin-top:-38px; top: 30px; right: 10px; height: 20px;">
+                </div>
             </div>
       </div>    
     </div> 
@@ -133,7 +148,10 @@
             <img src="https://static.thenounproject.com/png/396915-200.png" 
                 alt="Products" class="card-img-top" height="300px" >
                 <hr/>   
-                <h1 class="text-center"> TEST PROJECT</h1>
+                <div class="text-start" style="display: inline-block; width: 98%; ">
+                  <h2 class="text-center">TEST PROJECT</h2>
+                  <input type="checkbox" id="card1" class="form-check-input" style="float:right; margin-top:-38px; top: 30px; right: 10px; height: 20px;">
+                </div>
             </div>
       </div>    
       <div class="card">
@@ -141,7 +159,10 @@
             <img src="https://static.thenounproject.com/png/396915-200.png" 
                 alt="Products" class="card-img-top" height="300px" >
                 <hr/>   
-                <h1 class="text-center"> TEST PROJECT</h1>
+                <div class="text-start" style="display: inline-block; width: 98%; ">
+                  <h2 class="text-center">TEST PROJECT</h2>
+                  <input type="checkbox" id="card1" class="form-check-input" style="float:right; margin-top:-38px; top: 30px; right: 10px; height: 20px;">
+                </div>
             </div>
       </div>    
       <div class="card">
@@ -149,7 +170,10 @@
             <img src="https://static.thenounproject.com/png/396915-200.png" 
                 alt="Products" class="card-img-top" height="300px" >
                 <hr/>   
-                <h1 class="text-center"> TEST PROJECT</h1>
+                <div class="text-start" style="display: inline-block; width: 98%; ">
+                  <h2 class="text-center">TEST PROJECT</h2>
+                  <input type="checkbox" id="card1" class="form-check-input" style="float:right; margin-top:-38px; top: 30px; right: 10px; height: 20px;">
+                </div>
             </div>
       </div>    
       <div class="card">
@@ -157,7 +181,10 @@
             <img src="https://static.thenounproject.com/png/396915-200.png" 
                 alt="Products" class="card-img-top" height="300px" >
                 <hr/>   
-                <h1 class="text-center"> Products</h1>
+                <div class="text-start" style="display: inline-block; width: 98%; ">
+                  <h2 class="text-center">TEST PROJECT</h2>
+                  <input type="checkbox" id="card1" class="form-check-input" style="float:right; margin-top:-38px; top: 30px; right: 10px; height: 20px;">
+                </div>
             </div>
       </div>    
       <div class="card">
@@ -165,7 +192,10 @@
             <img src="https://static.thenounproject.com/png/396915-200.png" 
                 alt="Products" class="card-img-top" height="300px" >
                 <hr/>   
-                <h1 class="text-center"> Products</h1>
+                <div class="text-start" style="display: inline-block; width: 98%; ">
+                  <h2 class="text-center">TEST PROJECT</h2>
+                  <input type="checkbox" id="card1" class="form-check-input" style="float:right; margin-top:-38px; top: 30px; right: 10px; height: 20px;">
+                </div>
             </div>
       </div>    
     </div> 
