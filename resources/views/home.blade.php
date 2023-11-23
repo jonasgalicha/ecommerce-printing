@@ -67,6 +67,59 @@
     </form>
 </div>
 
+<div class="container">
+        <h2 class="mb-4">Place Your Order</h2>
+        <form>
+            <div class="mb-3">
+                <label for="fname" class="form-label">Full Name:</label>
+                <input type="text" class="form-control" id="fname" required>
+            </div>
+            <div class="mb-3">
+                <label for="pnumber" class="form-label">Personal Contact Number:</label>
+                <input type="text" class="form-control" id="pnumber" required>
+            </div>
+            <div class="mb-3">
+                <label for="email" class="form-label">Email Address:</label>
+                <input type="email" class="form-control" id="email" required>
+            </div>
+            <div class="mb-3">
+                <label for="payment" class="form-label">Payment Method:</label>
+                <select class="form-select" id="payment" required>
+                    <option value="">Select...</option>
+                    <option value="credit">Credit Card</option>
+                    <option value="debit">Debit Card</option>
+                    <option value="paypal">PayPal</option>
+                    <option value="paypal">COD</option>
+                </select>
+            </div>
+            <div class="mb-3">
+                <label for="address" class="form-label">Complete Address:</label>
+                <input type="text" class="form-control" id="address" required>
+            </div>
+            <div class="mb-3">
+                <label for="housenumber" class="form-label">House Number:</label>
+                <input type="text" class="form-control" id="housenumber" required>
+            </div>
+            <div class="mb-3">
+                <label for="city" class="form-label">City:</label>
+                <input type="text" class="form-control" id="city" required>
+            </div>
+            <div class="mb-3">
+                <label for="region" class="form-label">Region:</label>
+                <input type="text" class="form-control" id="region" required>
+            </div>
+            <div class="mb-3">
+                <label for="country" class="form-label">Country:</label>
+                <input type="text" class="form-control" id="country" required>
+            </div>
+            <div class="mb-3">
+                <label for="zipcode" class="form-label">Zip Code:</label>
+                <input type="text" class="form-control" id="zipcode" required>
+            </div>
+            <button type="submit" class="btn btn-primary">Place Order</button>
+        </form>
+    </div>
+
    
   
 @endsection
