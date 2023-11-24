@@ -37,11 +37,11 @@
                                 src="https://ui-avatars.com/api/?background=random&name={{ Auth::user()->name }}"
                                 alt="{{ Auth::user()->name }}">
                             <div class="media-body ms-2 text-dark align-items-center d-none d-lg-block">
-                                <span class="mb-0 font-small fw-bold text-gray-900">{{ auth()->user()->name }}</span>
+                                <span class="mb-0 font-small fw-bold text-white">{{ auth()->user()->name }}</span>
                             </div>
                         </div>
                     </a>
-                    <div class="dropdown-menu dashboard-dropdown dropdown-menu-end mt-2 py-1">
+                    <div class="dropdown-menu dashboard-dropdown dropdown-menu-end mt-2 py-1 ">
                         <a class="dropdown-item d-flex align-items-center" href="{{ route('profile.show') }}">
                             <svg class="dropdown-icon text-gray-400 me-2" fill="currentColor" viewBox="0 0 20 20"
                                 xmlns="http://www.w3.org/2000/svg">
@@ -57,7 +57,7 @@
                             <form method="POST" id="logout-form" action="{{ route('logout') }}">
                                 @csrf
                             </form>
-                            <svg class="dropdown-icon text-danger me-2" fill="none" stroke="currentColor"
+                            <svg class="dropdown-icon text-danger me-2 " fill="none" stroke="currentColor"
                                 viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                     d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1">

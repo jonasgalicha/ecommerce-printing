@@ -127,6 +127,7 @@ return new class extends Migration {
             ->forget(config('permission.cache.key'));
 
         Role::create(['name' => UserTypeEnum::Admin]);
+        Role::create(['name' => UserTypeEnum::Supplier]);
         Role::create(['name' => UserTypeEnum::User]);
     }
 

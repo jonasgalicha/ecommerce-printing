@@ -4,6 +4,7 @@ namespace App\Models;
 
 // use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Relations\HasOne;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
@@ -48,10 +49,19 @@ class User extends Authenticatable
     {
         return $this->hasRole('admin');
     }
+    public function isSupplier()
+    {
+        return $this->hasRole('supplier');
+    }
 
     public function isUser()
     {
         return $this->hasRole('user');
+    }
+
+    public function changeRole() : HasOne
+    {
+        return $this->hasOne(ChangeRole::class);
     }
 
 }

@@ -2,14 +2,15 @@
     <li class="nav-item">
         <a href="{{ route('home') }}" class="nav-link d-flex align-items-center">
             <span class="sidebar-icon me-3">
-                <img src="{{ asset('images/brand/light.svg') }}" height="20" width="20" alt="Volt Logo">
+                {{-- <img src="{{ asset('images/brand/light.svg') }}" height="20" width="20" alt="Volt Logo"> --}}
             </span>
             <span class="mt-1 ms-1 sidebar-text">
-                Volt Laravel
+                E-COMMERCE
             </span>
         </a>
     </li>
 
+    @admin
     <li class="nav-item {{ request()->routeIs('home') ? 'active' : '' }}">
         <a href="{{ route('home') }}" class="nav-link">
             <span class="sidebar-icon">
@@ -22,10 +23,9 @@
             <span class="sidebar-text">{{ __('Dashboard') }}</span>
         </a>
     </li>
-    
-    
-    <li class="nav-item">
-        <a href="{{ url('request-supplier') }}" class="nav-link">
+
+    <li class="nav-item {{ request()->routeIs('product.index') ? 'active' : '' }}">
+        <a href="{{ route('product.index') }}" class="nav-link">
             <span class="sidebar-icon">
                 <svg class="icon icon-xs me-2" fill="currentColor" viewBox="0 0 20 20"
                     xmlns="http://www.w3.org/2000/svg">
@@ -33,7 +33,7 @@
                     <path d="M12 2.252A8.014 8.014 0 0117.748 8H12V2.252z"></path>
                 </svg>
             </span>
-            <span class="sidebar-text">{{ __('Request Supplier') }}</span>
+            <span class="sidebar-text">{{ __('Products') }}</span>
         </a>
     </li>
 
@@ -45,6 +45,95 @@
             <span class="sidebar-text">{{ __('Users') }}</span>
         </a>
     </li>
+
+    <li class="nav-item {{ request()->routeIs('marketplace') ? 'active' : '' }}">
+        <a href="{{ route('marketplace') }}" class="nav-link">
+            <span class="sidebar-icon">
+                <svg class="icon icon-xs me-2" fill="currentColor" viewBox="0 0 20 20"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path d="M2 10a8 8 0 018-8v8h8a8 8 0 11-16 0z"></path>
+                    <path d="M12 2.252A8.014 8.014 0 0117.748 8H12V2.252z"></path>
+                </svg>
+            </span>
+            <span class="sidebar-text">{{ __('Marketplace') }}</span>
+        </a>
+    </li>
+    @endadmin
+
+    @supplier
+    <li class="nav-item {{ request()->routeIs('supplierHome') ? 'active' : '' }}">
+        <a href="{{ route('supplierHome') }}" class="nav-link">
+            <span class="sidebar-icon">
+                <svg class="icon icon-xs me-2" fill="currentColor" viewBox="0 0 20 20"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path d="M2 10a8 8 0 018-8v8h8a8 8 0 11-16 0z"></path>
+                    <path d="M12 2.252A8.014 8.014 0 0117.748 8H12V2.252z"></path>
+                </svg>
+            </span>
+            <span class="sidebar-text">{{ __('Dashboard') }}</span>
+        </a>
+    </li>
+
+    <li class="nav-item {{ request()->routeIs('product.index') ? 'active' : '' }}">
+        <a href="{{ route('product.index') }}" class="nav-link">
+            <span class="sidebar-icon">
+                <svg class="icon icon-xs me-2" fill="currentColor" viewBox="0 0 20 20"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path d="M2 10a8 8 0 018-8v8h8a8 8 0 11-16 0z"></path>
+                    <path d="M12 2.252A8.014 8.014 0 0117.748 8H12V2.252z"></path>
+                </svg>
+            </span>
+            <span class="sidebar-text">{{ __('Products') }}</span>
+        </a>
+    </li>
+
+    <li class="nav-item {{ request()->routeIs('marketplace') ? 'active' : '' }}">
+        <a href="{{ route('marketplace') }}" class="nav-link">
+            <span class="sidebar-icon">
+                <svg class="icon icon-xs me-2" fill="currentColor" viewBox="0 0 20 20"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path d="M2 10a8 8 0 018-8v8h8a8 8 0 11-16 0z"></path>
+                    <path d="M12 2.252A8.014 8.014 0 0117.748 8H12V2.252z"></path>
+                </svg>
+            </span>
+            <span class="sidebar-text">{{ __('Marketplace') }}</span>
+        </a>
+    </li>
+
+    @endsupplier
+
+    @user
+    <li class="nav-item {{ request()->routeIs('marketplace') ? 'active' : '' }}">
+        <a href="{{ route('marketplace') }}" class="nav-link">
+            <span class="sidebar-icon">
+                <svg class="icon icon-xs me-2" fill="currentColor" viewBox="0 0 20 20"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path d="M2 10a8 8 0 018-8v8h8a8 8 0 11-16 0z"></path>
+                    <path d="M12 2.252A8.014 8.014 0 0117.748 8H12V2.252z"></path>
+                </svg>
+            </span>
+            <span class="sidebar-text">{{ __('Dashboard') }}</span>
+        </a>
+    </li>
+
+    <li class="nav-item">
+        <a href="{{ route('supplier-request.index') }}" class="nav-link">
+            <span class="sidebar-icon">
+                <svg class="icon icon-xs me-2" fill="currentColor" viewBox="0 0 20 20"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path d="M2 10a8 8 0 018-8v8h8a8 8 0 11-16 0z"></path>
+                    <path d="M12 2.252A8.014 8.014 0 0117.748 8H12V2.252z"></path>
+                </svg>
+            </span>
+            <span class="sidebar-text">{{ __('Request Supplier') }}</span>
+        </a>
+    </li>
+
+    @enduser
+
+
+
+
 
     <li class="nav-item {{ request()->routeIs('about') ? 'active' : '' }}">
         <a href="{{ route('about') }}" class="nav-link">
