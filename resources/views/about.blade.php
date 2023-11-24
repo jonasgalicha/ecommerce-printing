@@ -83,7 +83,61 @@
     </div>
 </div>
 
+<div class="container mt-5">
+        <h2>Shopping Cart</h2>
+        <div class="card text-start mb-6">
+            <div class="card-body">
+                <div class="row">
+                      <div class="col-md-4">
+                        <img src="https://via.placeholder.com/150" alt="Product" class="img-fluid">
+                    </div>
+                    <div class="col-md-4">
+                        <h5>Product Name</h5>
+                        <p>Product Description</p>
+                        <h6>Quantity: 3</h6>
+                    </div>
+                    <div class="col-md-4">
+                        <h6>Price: $18</h6>
+                        <button class="btn btn-danger">Remove Item</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
+    <div class="container mt-5">
+        <h1>Shopping Cart</h1>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Product</th>
+                    <th>Quantity</th>
+                    <th>Price</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Product 1</td>
+                    <td>1</td>
+                    <td>$10</td>
+                    <td>
+                        <button class="btn btn-primary">Edit</button>
+                        <button class="btn btn-danger">Remove</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Product 2</td>
+                    <td>2</td>
+                    <td>$20</td>
+                    <td>
+                        <button class="btn btn-primary">Edit</button>
+                        <button class="btn btn-danger">Remove</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
     
     
 @endsection
