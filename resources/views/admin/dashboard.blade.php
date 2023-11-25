@@ -10,7 +10,7 @@
                 <div class="card-body">
                     <h2 class="card-title">Users</h2>
                     <p class="card-text">View and manage all registered users in page  </p>
-                    <a href="#" class="btn btn-primary">View Users</a>
+                    <a href="{{ route('users.index') }}" class="btn btn-primary">View Users</a>
                 </div>
             </div>
         </div>
@@ -19,7 +19,7 @@
                 <div class="card-body">
                     <h2 class="card-title">Orders</h2>
                     <p class="card-text">View and manage all orders made by users</p>
-                    <a href="#" class="btn btn-primary">View Orders</a>
+                    <a href="{{ route('adminOrder') }}" class="btn btn-primary">View Orders</a>
                 </div>
             </div>
         </div>
@@ -28,7 +28,7 @@
                 <div class="card-body">
                     <h2 class="card-title">Products</h2>
                     <p class="card-text">View and manage all products in the inventory</p>
-                    <a href="#" class="btn btn-primary">View Products</a>
+                    <a href="{{ route('product.index') }}" class="btn btn-primary">View Products</a>
                 </div>
             </div>
         </div>
@@ -39,7 +39,7 @@
                 <div class="card-body">
                     <h2 class="card-title">Messages</h2>
                     <p class="card-text">View and manage all messages from customers</p>
-                    <a href="#" class="btn btn-primary">View Messages</a>
+                    <a href="{{ url('chatify') }}" class="btn btn-primary">View Messages</a>
                 </div>
             </div>
         </div>
