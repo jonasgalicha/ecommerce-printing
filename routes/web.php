@@ -44,6 +44,8 @@ Route::middleware('auth')->group(function () {
         Route::get('about-us/create', [AboutUsController::class,'create'])->name('about.create');
         Route::get('/admin-home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
         Route::get('admin-orders', [OrderController::class,'adminOrder'])->name('adminOrder');
+        Route::get('cancel-order/{order}', [OrderController::class,'cancel'])->name('order.cancel');
+        Route::get('complete-order/{order}', [OrderController::class,'complete'])->name('order.complete');
         Route::resource('users', UserController::class);
         Route::get('suppliers', [UserController::class, 'suppliers'])->name('users.suppliers');
         Route::get('admin-supplier', [ChangeRoleController::class, 'adminIndex'])->name('admin-supplier.index');
@@ -63,9 +65,9 @@ Route::middleware('auth')->group(function () {
 
     Route::middleware('role:user')->group(function () {
         Route::get('customer-dashboard', [HomeController::class, 'userHome'])->name('userHome');
-        Route::resource('quotation', QuotationController::class)->except('index', 'destroy');
         Route::resource('supplier-request', ChangeRoleController::class)->only('store', 'index');
     });
+    Route::resource('quotation', QuotationController::class)->except('index', 'destroy');
 
     // Route::view('about', 'about')->name('about');
 

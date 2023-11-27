@@ -10,7 +10,7 @@
     <script src="//cdn.datatables.net/1.10.24/js/jquery.dataTables.min.js"></script>
     <script src="https://kit.fontawesome.com/5e81b262d9.js" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-    <title>{{ config('app.name', 'Laravel') }}</title>
+    <title>{{ config('app.name', '7JSign&PrintingServices') }}</title>
 
     <!-- Styles -->
     @vite('resources/sass/app.scss')

@@ -14,7 +14,8 @@ class Order extends Model
         'user_id',
         'product_id',
         'quantity',
-        'total'
+        'total',
+        'status',
     ];
 
     public function user() : BelongsTo

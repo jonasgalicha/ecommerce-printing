@@ -56,7 +56,7 @@
                                 <form action="{{ route('quotation.destroy', $quotation->id) }}" method="POST">
                                     @csrf
                                     @method('DELETE')
-                                    <button type="submit" class="btn btn-danger text-white"><strong>Delete</strong></button>
+                                    <button type="button" class="btn btn-danger text-white" onclick="confirmDelete(event)"><strong>Delete</strong></button>
                                 </form>
                                 @endadmin
                             </td>
@@ -68,7 +68,28 @@
         </div>
     </div>
     <script>
-        $('#dataTable').DataTable();
+        $(document).ready(function() {
+            $('#dataTable').DataTable();
+
+            window.confirmDelete = function(e) {
+                e.preventDefault();
+                const target = e.target; // Get the element that triggered the event
+                Swal.fire({
+                    title: 'Are you sure?',
+                    text: "Are you sure to delete this Quotation permanently?",
+                    icon: 'warning',
+                    showCancelButton: true,
+                    confirmButtonColor: '#3085d6',
+                    cancelButtonColor: '#d33',
+                    confirmButtonText: 'Yes, delete it!'
+                }).then((result) => {
+                    if (result.isConfirmed) {
+                        // Find the closest form and submit it
+                        $(target).closest('form').submit();
+                    }
+                });
+            }
+        });
     </script>
 </div>
 @endsection

@@ -19,7 +19,7 @@
                 <div class="card-body">
                     <h2 class="card-title">Orders</h2>
                     <p class="card-text">View and manage all orders made by users</p>
-                    <a href="{{ route('adminOrder') }}" class="btn btn-primary">View Orders</a>
+                    <a href="{{ route('order.index') }}" class="btn btn-primary">View Orders</a>
                 </div>
             </div>
         </div>

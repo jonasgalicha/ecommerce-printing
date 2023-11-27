@@ -21,7 +21,10 @@
     <div class="container-fluid">
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
             <div class="container-fluid text-center">
-              <h3 class="navbar-brand" href="#">Web Portal</h3>
+                <div class="d-flex">
+                    <img src="{{ asset('images/brand/logo.png') }}" alt="" class="me-3" height="50" width="50">
+                    <h3>Web Portal</h3>
+                </div>
               <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
               </button>
@@ -120,21 +123,20 @@
                 <img src="{{ asset('storage/' . $aboutUs->image) }}" alt="" height="700" width="850">
             </div>
         </div>
+    </div>
+    <div class="" style="margin-top: 5%; margin-bottom: 5%">
+        <h1 class="text-center">Our Top Customers</h1>
 
-        <div class="" style="margin-top: 5%; margin-bottom: 5%">
-            <h1 class="text-center">Our Top Customers</h1>
-
-            <div class="row">
-                @foreach ($topCustomers as $topCustomer)
-                <div class="col-3 card mx-2">
-                    <img src="{{ asset('storage/' . $topCustomer->image) }}" class="card-img-top" alt="..." height="150" width="150">
-                    <div class="card-body">
-                      <h5 class="card-title">{{ $topCustomer->name }}</h5>
-                      <p class="card-text">{{ $topCustomer->comment }}</p>
-                    </div>
-                  </div>
-                @endforeach
-            </div>
+        <div class="row">
+            @foreach ($topCustomers as $topCustomer)
+            <div class="col-3 card">
+                <img src="{{ asset('storage/' . $topCustomer->image) }}" class="" alt="..." height="150" width="700">
+                <div class="card-body">
+                  <h5 class="card-title">{{ $topCustomer->name }}</h5>
+                  <p class="card-text">{{ $topCustomer->comment }}</p>
+                </div>
+              </div>
+            @endforeach
         </div>
     </div>
 </body>

@@ -29,16 +29,27 @@ class OrderController extends Controller
 
     public function index()
     {
-        $orders = Order::with('product.productImages')->where('user_id', auth()->id())->get();
+        if(auth()->user()->hasRole('admin')) {
+            $orders = Order::with('product.productImages')->get();
+        } else {
+            $orders = Order::with('product.productImages')->where('user_id', auth()->id())->get();
+        }
 
         return view('client.order.index', compact('orders'));
     }
 
-    public function adminOrder()
+    public function complete(Order $order)
     {
-        $orders = Order::with('product.productImages')->get();
+        $order->update(['status' => '1']);
 
-        return view('admin.order.index');
+        return redirect()->route('order.index');
+    }
+
+    public function cancel(Order $order)
+    {
+        $order->update(['status' => '2']);
+
+        return redirect()->route('order.index');
     }
 
 }
