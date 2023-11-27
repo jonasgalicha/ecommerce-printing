@@ -7,7 +7,7 @@
             <span class="mt-1 ms-1 sidebar-text">
                 <div class="d-flex">
                     <img src="{{ asset('images/brand/logo.png') }}" alt="" class="me-3" height="25" width="25">
-                    <span>Web Portal</span>
+                    <span>7J|Web Portal</span>
                 </div>
             </span>
         </a>

@@ -32,7 +32,7 @@ class UserController extends Controller
         $user = User::create($request->all());
         $user->assignRole('staff');
 
-        alert()->success('Product has been added');
+        alert()->success('EMPLOYEE ACCOUNT HAS BEEN ADDED');
         return redirect()->route('users.index');
     }
 
