@@ -8,7 +8,14 @@
         <div>{{$error}}</div>
     @endforeach
 @endif
- <h1 class="my-4">Supplier Application</h1>
+<div class="row">
+    <div class="col">
+        <h1 class="my-4">Supplier Application</h1>
+    </div>
+    <div class="col text-end">
+        <a href="{{ route('admin-supplier.index') }}" class="btn btn-primary"><i class="fas fa-plus"></i></a>
+    </div>
+</div>
  <form action="{{ route('supplier-request.store') }}" method="POST" enctype="multipart/form-data">
     @csrf
     <div class="row">
@@ -56,7 +63,10 @@
     <button type="submit" class="btn btn-primary" @if($changeRole) disabled @endif>Submit</button>
  </form>
 
+@if ($changeRole)
  <h5 class="mt-4 text-success">Your request to be a supplier has been received by the Admin. Please wait until the Admin change it.</h5>
+@endif
+
 </div>
 
 @endsection

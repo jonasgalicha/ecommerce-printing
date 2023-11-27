@@ -37,8 +37,15 @@
                     </td>
                     @admin
                     <td class="">
-                        <a href="{{ route('order.complete', $order->id) }}" class="btn btn-primary me-2">COMPLETE</a>
-                        <a href="{{ route('order.cancel', $order->id) }}" class="btn btn-secondary">CANCELLED</a>
+                        <div class="btn-group" role="group" aria-label="Basic example">
+                            <a href="{{ route('order.complete', $order->id) }}" class="btn btn-primary me-2">COMPLETE</a>
+                            <a href="{{ route('order.cancel', $order->id) }}" class=" btn btn-secondary me-2">CANCELLED</a>
+                            <form action="{{ route('order.destroy', $order->id) }}" method="POST" class="">
+                                @csrf
+                                @method('DELETE')
+                                <button type="button" class=" btn btn-danger text-white" onclick="confirmDelete(event)"><strong>Delete</strong></button>
+                            </form>
+                        </div>
                     </td>
                     @endadmin
                 </tr>
@@ -46,7 +53,28 @@
         </tbody>
     </table>
     <script>
-        $('#dataTable').DataTable()
+        $(document).ready(function() {
+            $('#dataTable').DataTable();
+
+            window.confirmDelete = function(e) {
+                e.preventDefault();
+                const target = e.target; // Get the element that triggered the event
+                Swal.fire({
+                    title: 'Are you sure?',
+                    text: "Are you sure to delete this ORDER permanently?",
+                    icon: 'warning',
+                    showCancelButton: true,
+                    confirmButtonColor: '#3085d6',
+                    cancelButtonColor: '#d33',
+                    confirmButtonText: 'Yes, delete it!'
+                }).then((result) => {
+                    if (result.isConfirmed) {
+                        // Find the closest form and submit it
+                        $(target).closest('form').submit();
+                    }
+                });
+            }
+        });
     </script>
 </div>
 @endsection

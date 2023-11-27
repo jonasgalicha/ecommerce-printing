@@ -19,6 +19,7 @@ return new class extends Migration
             $table->string('email');
             $table->string('phone_number');
             $table->string('valid_id');
+            $table->integer('status')->default(0);
             $table->timestamps();
         });
     }

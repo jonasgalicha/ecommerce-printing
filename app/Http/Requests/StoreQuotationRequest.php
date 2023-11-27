@@ -25,7 +25,7 @@ class StoreQuotationRequest extends FormRequest
             'quotation' => ['required', 'string', 'max:255'],
             'name' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'max:255'],
-            'phone_number' => ['required', 'string', 'max:13'],
+            'phone_number' => ['required', 'string', 'min:11', 'max:13'],
             'description' => ['required', 'string', 'max:255'],
             'image' => ['required', 'file'],
         ];

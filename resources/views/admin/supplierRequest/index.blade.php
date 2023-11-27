@@ -15,7 +15,10 @@
                         <td>Email</td>
                         <td>Phone Number</td>
                         <td>Valid ID</td>
+                        <td>Status</td>
+                        @admin
                         <td>Action</td>
+                        @endadmin
                     </tr>
                 </thead>
                 <tbody>
@@ -28,8 +31,25 @@
                                 <img src="{{ asset('storage/' . $request->valid_id ) }}" alt="" height="100" width="100">
                             </td>
                             <td>
-                                <a href="{{ route('admin-supplier.approved', $request->id) }}" class="btn btn-primary">Approve</a>
+                                @if ($request->status == 0)
+                                    <strong style="text-warning">PENDING</strong>
+                                @elseif ($request->status == 2)
+                                     <strong style="text-danger">Cancelled</strong>
+                                @endif
                             </td>
+                            @admin
+                            <td>
+                                <div class="btn-group">
+                                    <a href="{{ route('admin-supplier.approved', $request->id) }}" class="btn btn-primary me-2">Approve</a>
+                                    <a href="{{ route('admin-supplier.reject', $request->id) }}" class="btn btn-secondary me-2">Reject</a>
+                                    <form action="{{ route('admin-supplier.destroy', $request->id) }}" method="POST">
+                                        @csrf
+                                        @method('DELETE')
+                                        <button type="button" class="btn btn-danger text-white" onclick="confirmDelete(event)"><strong>Delete</strong></button>
+                                    </form>
+                                </div>
+                            </td>
+                            @endadmin
                         </tr>
                     @endforeach
                 </tbody>
@@ -37,7 +57,28 @@
         </div>
     </div>
     <script>
-        $('#dataTable').DataTable();
+        $(document).ready(function() {
+            $('#dataTable').DataTable();
+
+            window.confirmDelete = function(e) {
+                e.preventDefault();
+                const target = e.target; // Get the element that triggered the event
+                Swal.fire({
+                    title: 'Are you sure?',
+                    text: "Are you sure to delete this Request to be Supplier permanently?",
+                    icon: 'warning',
+                    showCancelButton: true,
+                    confirmButtonColor: '#3085d6',
+                    cancelButtonColor: '#d33',
+                    confirmButtonText: 'Yes, delete it!'
+                }).then((result) => {
+                    if (result.isConfirmed) {
+                        // Find the closest form and submit it
+                        $(target).closest('form').submit();
+                    }
+                });
+            }
+        });
     </script>
 </div>
 @endsection

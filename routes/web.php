@@ -36,6 +36,7 @@ Route::middleware('auth')->group(function () {
     Route::get('quotation', [QuotationController::class,'index'])->name('quotation.index');
     Route::get('quotation-cancelled/{quotation}', [QuotationController::class,'cancel'])->name('quotation.cancel');
     Route::get('quotation-complete/{quotation}', [QuotationController::class,'complete'])->name('quotation.complete');
+    Route::get('admin-supplier', [ChangeRoleController::class, 'adminIndex'])->name('admin-supplier.index');
 
     Route::middleware('role:admin')->group(function () {
         Route::delete('quotation/{quotation}', [QuotationController::class,'destroy'])->name('quotation.destroy');
@@ -48,8 +49,9 @@ Route::middleware('auth')->group(function () {
         Route::get('complete-order/{order}', [OrderController::class,'complete'])->name('order.complete');
         Route::resource('users', UserController::class);
         Route::get('suppliers', [UserController::class, 'suppliers'])->name('users.suppliers');
-        Route::get('admin-supplier', [ChangeRoleController::class, 'adminIndex'])->name('admin-supplier.index');
+        Route::delete('admin-supplier/{changeRole}', [ChangeRoleController::class, 'destroy'])->name('admin-supplier.destroy');
         Route::get('admin-supplier/{changeRole}', [ChangeRoleController::class, 'approve'])->name('admin-supplier.approved');
+        Route::get('admin-supplier/{changeRole}/reject', [ChangeRoleController::class, 'reject'])->name('admin-supplier.reject');
         Route::get('active-product/{product}', [ProductController::class,'activeProduct'])->name('activeProduct');
         Route::get('main-product/{product}', [ProductController::class,'mainProduct'])->name('mainProduct');
         Route::get('normal-product/{product}', [ProductController::class,'normalProduct'])->name('normalProduct');

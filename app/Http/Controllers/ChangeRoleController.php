@@ -18,15 +18,19 @@ class ChangeRoleController extends Controller
 
     public function store(StoreSupplierRequest $request)
     {
-        ChangeRole::create($request->except('valid_id') + ['user_id' => auth()->id(), 'valid_id' => $request->file('valid_id')->store('supplier', 'public')]);
+        ChangeRole::create($request->except('valid_id') + ['user_id' => auth()->id(), 'valid_id' => $request->file('valid_id')->store('supplier', 'public'), 'status' => 0 ]);
 
         alert()->success('Request has been successfully received by Admin ');
-        return redirect()->route('supplier-request.index');
+        return redirect()->route('admin-supplier.index');
     }
 
     public function adminIndex()
     {
-        $usersRequests = ChangeRole::with('user')->get();
+        if(auth()->user()->hasRole('admin')){
+            $usersRequests = ChangeRole::with('user')->get();
+        } else {
+            $usersRequests = ChangeRole::with('user')->where('user_id', auth()->id())->get();
+        }
 
         return view('admin.supplierRequest.index', compact('usersRequests'));
     }
@@ -43,6 +47,22 @@ class ChangeRoleController extends Controller
 
         $changeRole->delete();
         alert()->success('User has been sucessfully change to Supplier');
+        return redirect()->route('admin-supplier.index');
+    }
+
+    public function reject(ChangeRole $changeRole)
+    {
+        $changeRole->status = 2;
+
+        alert()->success('User has been rejected by Admin');
+        return redirect()->route('admin-supplier.index');
+    }
+
+    public function destroy(ChangeRole $changeRole)
+    {
+        $changeRole->delete();
+
+        alert()->success('Request has been deleted successfully by Admin ');
         return redirect()->route('admin-supplier.index');
     }
 
