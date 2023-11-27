@@ -4,7 +4,7 @@
 
 <div class="container-fluid mt-5" style="min-height: 70vh">
     <h1>Shopping Cart</h1>
-    <table class="table table-bordered" id="dataTable">
+    <table class="table table-striped" id="dataTable">
         <thead>
             <tr>
                 <th>Product Image</th>

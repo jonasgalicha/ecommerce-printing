@@ -28,12 +28,12 @@ class HomeController extends Controller
 
     public function supplierHome()
     {
-        return view('supplier.index');
+        return view('supplier.dashboard');
     }
 
     public function userHome()
     {
-        return view('client.marketplace.index');
+        return view('client.dashboard');
     }
 
 }

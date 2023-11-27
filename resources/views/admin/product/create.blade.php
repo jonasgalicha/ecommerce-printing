@@ -18,6 +18,10 @@
             <label for="productDescription" class="form-label">Product Description</label>
             <textarea class="form-control" id="productDescription" name="product_description" placeholder="Product Description" rows="3" required></textarea>
         </div>
+        <div class="mb-3">
+            <label for="productName" class="form-label">Price</label>
+            <input type="number" class="form-control" id="productName" name="price" placeholder="Price" required>
+        </div>
 
         <button type="submit" class="btn btn-primary">Add Product</button>
     </form>

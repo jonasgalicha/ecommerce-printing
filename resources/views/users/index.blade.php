@@ -3,15 +3,21 @@
 @section('content')
     <div class="main py-4">
         <div class="card card-body border-0 shadow table-wrapper table-responsive">
-            <h2 class="mb-4 h5">{{ __('Users') }}</h2>
+            <div class="row">
+                <div class="col">
+                    <h2 class="mb-4 h5">{{ __('Users') }}</h2>
+                </div>
+                <div class="col text-end">
+                    <a href="{{ route('users.create') }}" class="btn btn-primary"><i class="fas fa-plus"></i></a>
+                </div>
+            </div>
 
-            <p class="text-info mb-0">Sample table page</p>
-
-            <table class="table table-hover">
+            <table class="table table-hover" id="dataTable">
                 <thead>
                     <tr>
                         <th class="border-gray-200">{{ __('Name') }}</th>
                         <th class="border-gray-200">{{ __('Email') }}</th>
+                        <th class="border-gray-200">{{ __('Action') }}</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -19,14 +25,41 @@
                         <tr>
                             <td><span class="fw-normal">{{ $user->name }}</span></td>
                             <td><span class="fw-normal">{{ $user->email }}</span></td>
+                            <td>
+                                <form action="{{ route('users.destroy', $user->id) }}" method="POST">
+                                    @csrf
+                                    @method('DELETE')
+                                    <button type="button" class="btn btn-danger text-white" onclick="confirmDelete(event)"><strong>Delete</strong></button>
+                                </form>
+                            </td>
                         </tr>
                     @endforeach
                 </tbody>
             </table>
-            <div
-                class="card-footer px-3 border-0 d-flex flex-column flex-lg-row align-items-center justify-content-between">
-                {{ $users->links() }}
-            </div>
         </div>
+        <script>
+            $(document).ready(function() {
+                $('#dataTable').DataTable();
+
+                window.confirmDelete = function(e) {
+                    e.preventDefault();
+                    const target = e.target; // Get the element that triggered the event
+                    Swal.fire({
+                        title: 'Are you sure?',
+                        text: "Are you sure to delete this USER permanently?",
+                        icon: 'warning',
+                        showCancelButton: true,
+                        confirmButtonColor: '#3085d6',
+                        cancelButtonColor: '#d33',
+                        confirmButtonText: 'Yes, delete it!'
+                    }).then((result) => {
+                        if (result.isConfirmed) {
+                            // Find the closest form and submit it
+                            $(target).closest('form').submit();
+                        }
+                    });
+                }
+            });
+        </script>
     </div>
 @endsection

@@ -11,7 +11,11 @@ class ProductController extends Controller
 {
     public function index()
     {
-        $products = Product::with('productImages', 'user')->get();
+        if(auth()->user()->hasRole('admin')) {
+            $products = Product::with('productImages', 'user')->get();
+        } else {
+            $products = Product::with('productImages', 'user')->where('user_id', auth()->user()->id)->get();
+        }
 
         return view('admin.product.index', compact('products'));
     }
@@ -73,4 +77,11 @@ class ProductController extends Controller
         return view('client.marketplace.index', compact('products', 'mainProducts', 'activeProduct'));
     }
 
+    public function destroy(Product $product)
+    {
+        $product->delete();
+
+        alert()->success('Product has been deleted');
+        return redirect()->route('product.index');
+    }
 }

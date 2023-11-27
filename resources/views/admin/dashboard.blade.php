@@ -43,6 +43,15 @@
                 </div>
             </div>
         </div>
+        <div class="col-md-4">
+            <div class="card text-center mb-4">
+                <div class="card-body">
+                    <h2 class="card-title">Suppliers</h2>
+                    <p class="card-text">View and manage all suppliers</p>
+                    <a href="{{ route('users.suppliers') }}" class="btn btn-primary">View Supplier</a>
+                </div>
+            </div>
+        </div>
     </div>
 </div>
 

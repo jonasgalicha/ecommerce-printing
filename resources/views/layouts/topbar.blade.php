@@ -1,38 +1,21 @@
 <nav class="navbar navbar-top navbar-expand-lg navbar-dashboard navbar-dark bg-gray-800 ps-2 pe-20 pb-0" style="border-radius: 1px;">
     <div class="container-fluid">
-        <form class="d-flex flex-grow-1 me-auto">
-            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-            <button class="btn btn-outline-light" type="submit">
-                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
-                    <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85zm-4.242 0a4.5 4.5 0 1 1 1.398-1.398A4.5 4.5 0 0 1 7.5 10.344z"/>
-                </svg>
-            </button>
-        </form>
 
         <div class="d-flex justify-content-center align-items-center w-100" id="navbarSupportedContent">
             <a class="navbar-brand ">
                 <span class="fw-bold text-light" style="color: #ffffff;">
+                    <div class="d-flex">
+                        <img src="{{ asset('images/brand/logo.png') }}" alt="" class="me-3" height="50" width="50">
                     <h3 class="text-center" style="color: #F2F0EB;">7J Sign and Printing Services</h3>
+                    </div>
                 </span>
             </a>
 
             <ul class="navbar-nav align-items-center ms-auto">
                 <li class="nav-item me-4">
-                    @user
-                    <a href="{{ url('/chatify/1') }}" class="nav-link">
-                        <i class="fas fa-comment fs-2"></i>
-                    </a>
-                    @enduser
-                    @supplier
-                    <a href="{{ url('/chatify/1') }}" class="nav-link">
-                        <i class="fas fa-comment fs-2"></i>
-                    </a>
-                    @endsupplier
-                    @admin
                     <a href="{{ url('/chatify') }}" class="nav-link">
                         <i class="fas fa-comment fs-2"></i>
                     </a>
-                    @endadmin
                 </li>
                 <!-- Rest of the navbar content -->
                 <!-- ... -->

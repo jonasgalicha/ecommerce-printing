@@ -2,14 +2,46 @@
 
 namespace App\Http\Controllers;
 
+use App\Enums\UserTypeEnum;
 use App\Models\User;
+use Illuminate\Http\Request;
 
 class UserController extends Controller
 {
     public function index()
     {
-        $users = User::paginate();
+        $users = User::role(UserTypeEnum::User)->get();
 
         return view('users.index', compact('users'));
     }
+
+    public function suppliers()
+    {
+        $users = User::role(UserTypeEnum::Supplier)->get();
+
+        return view('users.suppliers', compact('users'));
+    }
+
+    public function create()
+    {
+        return view('users.create');
+    }
+
+    public function store(Request $request)
+    {
+        $user = User::create($request->all());
+        $user->assignRole('staff');
+
+        alert()->success('Product has been added');
+        return redirect()->route('users.index');
+    }
+
+    public function destroy(User $user)
+    {
+         $user->delete();
+
+        alert()->success('User has been deleted');
+        return redirect()->route('users.index');
+    }
+
 }

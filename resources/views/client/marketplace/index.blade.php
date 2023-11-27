@@ -116,6 +116,7 @@ integrity="sha512-bPs7Ae6pVvhOSiIcyUClR7/q2OAsRiovw4vAkX+zJbw3ShAeeqezq50RIIcIUR
     }
 })
    </script>
+  </div>
 </body>
 </html>
 @endsection

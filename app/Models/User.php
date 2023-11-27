@@ -60,6 +60,11 @@ class User extends Authenticatable
         return $this->hasRole('user');
     }
 
+    public function isStaff()
+    {
+        return $this->hasRole('staff');
+    }
+
     public function changeRole() : HasOne
     {
         return $this->hasOne(ChangeRole::class);
@@ -68,6 +73,11 @@ class User extends Authenticatable
     public function order() : HasMany
     {
         return $this->hasMany(Order::class);
+    }
+
+    public function quotation() : HasOne
+    {
+        return $this->hasOne(Quotation::class);
     }
 
 }

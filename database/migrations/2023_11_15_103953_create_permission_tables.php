@@ -129,6 +129,7 @@ return new class extends Migration {
         Role::create(['name' => UserTypeEnum::Admin]);
         Role::create(['name' => UserTypeEnum::Supplier]);
         Role::create(['name' => UserTypeEnum::User]);
+        Role::create(['name' => UserTypeEnum::Staff]);
     }
 
     /**

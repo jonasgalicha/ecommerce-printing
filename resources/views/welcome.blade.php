@@ -19,19 +19,91 @@
 <body>
 
     <div class="container-fluid">
-        <div class="row">
-            <div class="col-8">
-                <div class="text-end mt-3" style="margin-right: 8%">
-                    <h1 style="font-weight: 800">7J Sign and Printing Services</h1>
-                </div>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <div class="container-fluid text-center">
+              <h3 class="navbar-brand" href="#">Web Portal</h3>
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse justify-content-center" id="navbarSupportedContent">
+                <ul class="navbar-nav">
+                  <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="/">About Us</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="/login">Contact Us</a>
+                  </li>
+                </ul>
+              </div>
+              <div class="d-flex align-items-center">
+                <a class="nav-link" href="/login">Login</a>
+                <a class="nav-link" href="/register">Register</a>
+              </div>
             </div>
-            <div class="col-4">
-                <div class="text-end mt-4">
-                    <a href="{{ route('register') }}" class=""><strong class="h4 me-4" style="font-weight: 800">Register</strong></a>
-                    <a href="{{ route('login') }}" class=""><strong class="h4" style="font-weight: 800">Login</strong></a>
+          </nav>
+
+
+          <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-inner">
+              <div class="carousel-item active">
+                <img style="width: 5000px;" src="{{ asset('storage/' . $activeProduct->productImages?->first()->image_path) }}" height="800"   alt="...">
+              </div>
+              @foreach ($mainProducts as $mainProduct)
+                <div class="carousel-item">
+                    <img src="{{ asset('storage/' . $mainProduct->productImages?->first()->image_path) }}" class="d-block w-100" height="800" alt="...">
+                    <div class="carousel-caption d-none d-md-block">
+                    </div>
                 </div>
+            @endforeach
             </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Next</span>
+            </button>
+          </div>
+
+      <div id="carouselExampleControlsNoTouching" class="carousel slide" data-bs-touch="false" data-bs-interval="false">
+        <h1 class="text-center fw-bolder mt-4"> SERVICES OFFER </h1>
+        <div class="carousel-inner w-75 mx-auto align-items-center">
+          @foreach ($products as $index => $product)
+          <div class="carousel-item {{ $index == 0 ? 'active' : '' }}">
+            <div class="card">
+              <div class="card-body">
+                <img src="{{ asset('storage/'. $product->productImages?->first()?->image_path) }}" class="card-img-top" height="300px">
+                <hr/>
+                <h2 class="text-start">{{ $product?->product_name }}</h2>
+              </div>
+            </div>
+          </div>
+          @endforeach
         </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControlsNoTouching" data-bs-slide="prev" style="color: black">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControlsNoTouching" data-bs-slide="next" style="color: black">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
+
+
+      <div class="container mt-5">
+          <div class="row">
+            <div class="owl-carousel owl-theme">
+
+          </div>
+      </div>
+      </div>
+
+
+        </div>
+
+    <div class="container-fluid">
         <div class="row" style="margin-top: 10%">
             <div class="col-1"></div>
             <div class="col-6">
@@ -48,7 +120,22 @@
                 <img src="{{ asset('storage/' . $aboutUs->image) }}" alt="" height="700" width="850">
             </div>
         </div>
-    </div>
 
+        <div class="" style="margin-top: 5%; margin-bottom: 5%">
+            <h1 class="text-center">Our Top Customers</h1>
+
+            <div class="row">
+                @foreach ($topCustomers as $topCustomer)
+                <div class="col-3 card mx-2">
+                    <img src="{{ asset('storage/' . $topCustomer->image) }}" class="card-img-top" alt="..." height="150" width="150">
+                    <div class="card-body">
+                      <h5 class="card-title">{{ $topCustomer->name }}</h5>
+                      <p class="card-text">{{ $topCustomer->comment }}</p>
+                    </div>
+                  </div>
+                @endforeach
+            </div>
+        </div>
+    </div>
 </body>
 </html>

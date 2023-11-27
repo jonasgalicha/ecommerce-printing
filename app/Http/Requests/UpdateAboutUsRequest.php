@@ -25,7 +25,7 @@ class UpdateAboutUsRequest extends FormRequest
             'text_header' => ['required', 'string', 'max:255'],
             'header' => ['required', 'string', 'max:255'],
             'second_text' => ['required', 'string', 'max:255'],
-            'image' => ['required', 'file']
+            'image' => ['nullable', 'file']
         ];
     }
 }

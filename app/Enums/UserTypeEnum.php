@@ -14,4 +14,5 @@ final class UserTypeEnum extends Enum
     const Admin = 'admin';
     const Supplier = 'supplier';
     const User = 'user';
+    const Staff = 'staff';
 }
