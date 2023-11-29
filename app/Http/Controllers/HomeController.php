@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Enums\UserTypeEnum;
+use App\Models\User;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -34,6 +36,13 @@ class HomeController extends Controller
     public function userHome()
     {
         return view('client.dashboard');
+    }
+
+    public function staffs()
+    {
+        $staffs = User::role(UserTypeEnum::Staff)->get();
+
+        return view('supplier.staffList', compact('staffs'));
     }
 
 }

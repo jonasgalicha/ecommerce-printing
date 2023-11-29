@@ -6,6 +6,7 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\OrderController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\QuotationController;
+use App\Http\Controllers\SalesReportController;
 use App\Http\Controllers\TopCustomerController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
@@ -37,6 +38,10 @@ Route::middleware('auth')->group(function () {
     Route::get('quotation-cancelled/{quotation}', [QuotationController::class,'cancel'])->name('quotation.cancel');
     Route::get('quotation-complete/{quotation}', [QuotationController::class,'complete'])->name('quotation.complete');
     Route::get('admin-supplier', [ChangeRoleController::class, 'adminIndex'])->name('admin-supplier.index');
+    Route::resource('sales-report', SalesReportController::class);
+    Route::get('sales-date/{salesDate}', [SalesReportController::class,'view'])->name('sales-report.view');
+    Route::delete('sales-date/{salesDate}', [SalesReportController::class,'delete'])->name('sales-report.delete');
+    Route::get('staffs', [HomeController::class, 'staffs'])->name('staffs');
 
     Route::middleware('role:admin')->group(function () {
         Route::delete('quotation/{quotation}', [QuotationController::class,'destroy'])->name('quotation.destroy');
