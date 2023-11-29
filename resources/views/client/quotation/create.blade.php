@@ -49,7 +49,7 @@
         @enderror
         <div class="mb-3">
             <label for="phone" class="form-label">Phone Number</label>
-            <input type="number" class="form-control" id="phone" name="phone_number">
+            <input type="text" class="form-control" id="phone" name="phone_number" pattern="\d{11}" title="Phone number must be 11 digits" maxlength="11">
         </div>
         @error('phone_number')
         <small class="text-danger">{{ $message }}</small>

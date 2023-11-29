@@ -20,7 +20,7 @@
                         <td>Product Name</td>
                         <td>Product Description</td>
                         <td>Price</td>
-                        <td>Status</td>
+                        <td>Product Category</td>
                         @admin
                         <td>Action</td>
                         @endadmin
@@ -48,8 +48,13 @@
                                     <strong style="color: green">Active Product</strong>
                                 @endif
                             </td>
-                            @admin
                             <td class="d-flex">
+                            @supplier
+                                <a href="{{ route('mainProduct', $product->id) }}" class="btn btn-primary me-2">Main Product</a>
+                                <a href="{{ route('normalProduct', $product->id) }}" class="btn btn-secondary me-2">Normal Product</a>
+                                <a href="{{ route('activeProduct', $product->id) }}" class="btn btn-success text-white me-2"><strong>Active Product</strong></a>
+                            @endsupplier
+                            @admin
                                 <a href="{{ route('mainProduct', $product->id) }}" class="btn btn-primary me-2">Main Product</a>
                                 <a href="{{ route('normalProduct', $product->id) }}" class="btn btn-secondary me-2">Normal Product</a>
                                 <a href="{{ route('activeProduct', $product->id) }}" class="btn btn-success text-white me-2"><strong>Active Product</strong></a>
@@ -58,8 +63,8 @@
                                     @method('DELETE')
                                     <button type="button" class="btn btn-danger text-white" onclick="confirmDelete(event)"><strong>Delete</strong></button>
                                 </form>
-                            </td>
                             @endadmin
+                            </td>
                         </tr>
                     @endforeach
                 </tbody>

@@ -45,8 +45,12 @@
                                             </path>
                                         </svg>
                                     </span>
-                                    <input name="password" type="password" placeholder="{{ __('Password') }}"
-                                        class="form-control" id="password" required>
+                                    <input name="password" type="password" placeholder="{{ __('Password') }}" class="form-control" id="password" required>
+                                    <button class="input-group-text" id="togglePassword" type="button">
+                                        <!-- Eye icon (you can use an <svg> or an icon class) -->
+                                        <i class="fas fa-eye"></i>
+                                    </button>
+
                                 </div>
                                 @error('password')
                                     <div class="invalid-feedback"> {{ $message }} </div>
@@ -81,5 +85,16 @@
                 </div>
             </div>
         </div>
+        <script>
+            document.getElementById('togglePassword').addEventListener('click', function (e) {
+                const password = document.getElementById('password');
+                const type = password.getAttribute('type') === 'password' ? 'text' : 'password';
+                password.setAttribute('type', type);
+
+                // Toggle the icon class or innerHTML here if needed
+                this.innerHTML = type === 'password' ? '<i class="fas fa-eye"></i>' : '<i class="fas fa-eye-slash"></i>';
+            });
+        </script>
+
     </div>
 @endsection
